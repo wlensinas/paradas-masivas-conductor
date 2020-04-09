@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-header class="medio-title">
+        <mat-card-title>Login de usuario</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form class="registro-form">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>DNI</mat-label>
+                <input matInput placeholder="Nombre" id="nombre">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            <div class="medio">
+                <button type="submit" mat-raised-button color="accent">Iniciar Sesión</button>
+            </div>
+            <p class="medio">
+                ¿No tienes un usuario?
+                <a mat-button color="primary" [routerLink]="['/registro']">Registrate</a>
+            </p>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Alta de usuario</mat-card-title>
+        <mat-card-subtitle>Ingrese los datos para proceder a tomar viajes</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form class="registro-form">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" id="nombre">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Apellido</mat-label>
+                <input matInput placeholder="Apellido" id="apellido">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>DNI</mat-label>
+                <input matInput placeholder="DNI" id="dni">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" id="email">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            <div class="medio">
+                <button type="submit" mat-raised-button color="accent">Registrar Usuario</button>
+            </div>
+            <p class="medio">
+                ¿Ya tienes un usuario?
+                <a mat-button color="primary" [routerLink]="['/login']">Iniciar Sesión</a>
+            </p>
+        </form>
+    </mat-card-content>
+</mat-card>
