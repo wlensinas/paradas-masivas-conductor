@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { LectorqrComponent } from './lectorqr/lectorqr.component';
 import { ListarViajesComponent } from './listar-viajes/listar-viajes.component';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
