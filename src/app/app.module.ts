@@ -11,7 +11,7 @@ import { ListarViajesComponent } from './listar-viajes/listar-viajes.component';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    ZXingScannerModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

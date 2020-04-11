@@ -12,5 +12,18 @@
         <button type="submit" mat-raised-button color="accent">Verificar Ticket</button>
       </div>
     </mat-card-actions>
-    <img mat-card-image src="../../assets/qr_code.png" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="../../assets/qr_code.png" alt="codigo QR">
+    <zxing-scanner
+      #scanner
+      [(device)]="currentDevice"
+      (scanSuccess)="onCodeResult($event)"
+      (permissionResponse)="onHasPermission($event)"
+    ></zxing-scanner>
   </mat-card>
+  <mat-card>
+    <mat-card-content>
+        Resultado QR: {{ qrResult }}
+    </mat-card-content>
+  </mat-card>
+
+  
